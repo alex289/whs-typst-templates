@@ -170,6 +170,7 @@
   // -------- Predefined pages -------
 
   title-page.title(
+    background,
     thesis-type,
     title,
     degree,
@@ -180,14 +181,13 @@
     first-examiner,
     second-examiner,
     date-of-submission,
-    background: background,
   )
   affidavit.affidavit(
+    background,
     degree,
     title,
     place,
     date,
-    background: background,
   )
   pagebreak()
   abstract

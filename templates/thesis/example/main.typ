@@ -13,12 +13,12 @@
    acronyms.acronyms,
    meta.degree,
    meta.place,
-   meta.thesisType,
+   meta.thesis-type,
    meta.studyCourse,
    meta.department,
-   meta.firstExaminer,
-   meta.secondExaminer,
-   meta.dateOfSubmission,
+   meta.first-examiner,
+   meta.second-examiner,
+   meta.date-of-submission,
 )
 
 // ---------------- Main ------------------
