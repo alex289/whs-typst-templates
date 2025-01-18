@@ -26,6 +26,9 @@ jobs:
       - name: Install Fonts
         run: fontist install "Fira Code" && fontist install "TeX"
 
+      - name: Create target directory
+        run: mkdir -p ~/.local/share/typst/packages/local/whs-${{ matrix.type }}/0.1.0
+
       - name: Copy package to data directory
         run: cp -r templates/${{ matrix.type }} ~/.local/share/typst/packages/local/whs-${{ matrix.type }}/0.1.0
 
