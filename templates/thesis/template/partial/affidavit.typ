@@ -1,5 +1,5 @@
 #let affidavit(
-  background: image("images/Background.png"),
+  background: image("images/background.png"),
   degree,
   title,
   place,
