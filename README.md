@@ -1,6 +1,6 @@
 # Typst Templates for the Westfälische Hochschule
 
-These **unofficial** templates can be used to write in [Typst](https://github.com/typst/typst) with the corporate design of [Westfälische Hochschule](https://www.w-hs.de/).
+These **unofficial** templates can be used to write in [Typst](https://github.com/typst/typst) with the corporate design of the [Westfälische Hochschule](https://www.w-hs.de/).
 
 #### Disclaimer
 Please ask your supervisor if you are allowed to use typst and this template for your thesis or other documents.
