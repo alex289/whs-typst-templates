@@ -1,5 +1,5 @@
 #let title(
-  background: image("images/Background.png"),
+  background,
   thesis-type,
   title,
   degree,

@@ -28,7 +28,7 @@
   first-examiner,
   second-examiner,
   date-of-submission,
-  background: image("partial/images/Background.png"),
+  background: image("partial/images/background.png"),
   body,
 ) = {
   // ========== global definitions ============
