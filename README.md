@@ -13,8 +13,8 @@ Create a new typst project based on this template locally.
 typst init @preview/whs-thesis
 cd whs-thesis
 
-typst init @preview/whs-exercise
-cd whs-exercise
+typst init @preview/whs-assignment
+cd whs-assignment
 ```
 Or create a project on the typst web app based on this template.
 
