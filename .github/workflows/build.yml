@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        type: [thesis]
+        type: [thesis, assignment]
     steps:
       - name: Checkout
         uses: actions/checkout@v4

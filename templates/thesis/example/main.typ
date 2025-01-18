@@ -4,21 +4,21 @@
 #import "acronyms.typ" as acronyms
 
 #show: whs-thesis.with(
-   meta.title,
-   meta.author,
-   meta.date,
-   meta.keywords,
-   [#abstract],
-   meta.bibliography,
-   acronyms.acronyms,
-   meta.degree,
-   meta.place,
-   meta.thesis-type,
-   meta.studyCourse,
-   meta.department,
-   meta.first-examiner,
-   meta.second-examiner,
-   meta.date-of-submission,
+  meta.title,
+  meta.author,
+  meta.date,
+  meta.keywords,
+  [#abstract],
+  meta.bibliography,
+  acronyms.acronyms,
+  meta.degree,
+  meta.place,
+  meta.thesis-type,
+  meta.studyCourse,
+  meta.department,
+  meta.first-examiner,
+  meta.second-examiner,
+  meta.date-of-submission,
 )
 
 // ---------------- Main ------------------

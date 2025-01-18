@@ -17,3 +17,12 @@ typst init @preview/whs-exercise
 cd whs-exercise
 ```
 Or create a project on the typst web app based on this template.
+
+## Contributing
+
+When contributing make sure to format all files with [typstyle](https://github.com/Enter-tainer/typstyle).
+
+```bash
+# In the root directory of the repository
+typstyle format-all templates
+```

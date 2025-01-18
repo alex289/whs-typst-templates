@@ -14,13 +14,15 @@ Abgekürzt: @api
 
 Dieser Verweis kann dann mit `@WinNT` @WinNT referenziert werden und ist dann im Literaturverzeichnis zu finden.
 
-#figure( 
+#figure(
   ```typ
   == Überschrift <HeadingLabel>
-  
+
   #figure(...) <AbbLabel>
   ```,
-  caption: [Dieses Codebeispiel ist auch mit einem `label` versehen.], kind: "code", supplement: "Code"
+  caption: [Dieses Codebeispiel ist auch mit einem `label` versehen.],
+  kind: "code",
+  supplement: "Code",
 ) <KreuzverweisBeispiel>
 
 #figure(
