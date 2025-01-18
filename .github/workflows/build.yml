@@ -30,7 +30,7 @@ jobs:
         run: mkdir -p ~/.local/share/typst/packages/local/whs-${{ matrix.type }}/0.1.0
 
       - name: Copy package to data directory
-        run: cp -r templates/${{ matrix.type }} ~/.local/share/typst/packages/local/whs-${{ matrix.type }}/0.1.0
+        run: cp -r templates/${{ matrix.type }}/. ~/.local/share/typst/packages/local/whs-${{ matrix.type }}/0.1.0/
 
       - name: Render Paper
         run: typst compile templates/${{ matrix.type }}/example/main.typ ${{ matrix.type }}.pdf --font-path ~/.fontist/fonts
