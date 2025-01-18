@@ -1,0 +1,38 @@
+name: Render Paper
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'main'
+    tags:
+      - 'v*'
+
+jobs:
+  render-paper:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        type: [thesis]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Typst
+        uses: typst-community/setup-typst@v3
+        with:
+          cache-dependency-path: templates/${{ matrix.type }}/template/lib.typ
+
+      - name: Install Fontist
+        uses: fontist/setup-fontist@v2
+
+      - name: Install Fonts
+        run: fontist install "Fira Code" && fontist install "TeX"
+
+      - name: Render Paper
+        run: typst compile templates/${{ matrix.type }}/example/main.typ ${{ matrix.type }}.pdf --font-path ~/.fontist/fonts
+
+      - name: Upload Paper
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.type }}
+          path: ${{ matrix.type }}.pdf
