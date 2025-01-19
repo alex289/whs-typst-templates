@@ -4,7 +4,7 @@ These **unofficial** templates can be used to write in [Typst](https://github.co
 
 #### Disclaimer
 Please ask your supervisor if you are allowed to use typst and this template for your thesis or other documents.
-Note that this template is not checked by TU Darmstadt for correctness.
+Note that this template is not checked the by the Westfälische Hochschule for correctness.
 Thus, this template does not guarantee completeness or correctness.
 
 ## Usage
