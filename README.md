@@ -10,11 +10,11 @@ Thus, this template does not guarantee completeness or correctness.
 ## Usage
 Create a new typst project based on this template locally.
 ```bash
-typst init @preview/whs-thesis
-cd whs-thesis
+typst init @preview/modern-whs-thesis
+cd modern-whs-thesis
 
-typst init @preview/whs-assignment
-cd whs-assignment
+typst init @preview/modern-whs-assignment
+cd modern-whs-assignment
 ```
 Or create a project on the typst web app based on this template.
 
