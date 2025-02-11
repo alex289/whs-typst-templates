@@ -8,9 +8,9 @@
 
 Nutzen von Abkürzungen:
 
-Ausgeschrieben: @api
+Ausgeschrieben: @api und @html
 
-Abgekürzt: @api
+Abgekürzt: @api und @html
 
 Dieser Verweis kann dann mit `@WinNT` @WinNT referenziert werden und ist dann im Literaturverzeichnis zu finden.
 
