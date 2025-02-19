@@ -1,6 +1,6 @@
 [package]
 name = "modern-whs-thesis"
-version = "0.1.0"
+version = "0.3.0"
 entrypoint = "template/lib.typ"
 authors = ["Alexander Konietzko <https://github.com/alex289>"]
 license = "MIT"

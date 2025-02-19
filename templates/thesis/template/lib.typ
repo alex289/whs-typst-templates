@@ -5,9 +5,9 @@
 #import "partial/title.typ" as title-page
 #import "partial/glossar.typ" as glossar
 
-#import "@preview/codly:1.0.0": *
-#import "@preview/codly-languages:0.1.5": *
-#import "@preview/glossarium:0.5.1": make-glossary
+#import "@preview/codly:1.2.0": *
+#import "@preview/codly-languages:0.1.6": *
+#import "@preview/glossarium:0.5.3": make-glossary
 
 #let whs-thesis(
   title,
@@ -122,30 +122,6 @@
   show outline: set heading(outlined: true)
   show outline: set heading(numbering: "1")
 
-  // modify outline entries
-  // add spacing between numbering and text
-  show outline.entry: it => {
-    let t = context counter(heading).display()
-    let e = it.element
-    if (
-      e.has("supplement")
-        and e.supplement == [Abschnitt]
-        and e.numbering != none
-    ) {
-      link(it.element.location())[
-        #context {
-          let c = counter(heading).at(it.element.location())
-          numbering(it.element.numbering, ..c)
-        }
-        #h(2mm)
-        #it.element.body
-        #box(width: 1fr, it.fill)
-        #it.page]
-    } else {
-      it
-    }
-  }
-
   // ------- Common Elements -------------
 
   //show link: underline
@@ -210,6 +186,11 @@
 
   set par(leading: 1em)
   heading(outlined: false, numbering: none)[Inhaltsverzeichnis]
+  show outline.entry: it => link(
+    it.element.location(),
+    [#it.indented(it.prefix(), it.inner()) #v(12pt, weak: true)],
+  )
+  set outline.entry(fill: repeat[.])
   show outline.entry.where(level: 1): it => {
     v(18pt, weak: true)
     if it.at("label", default: none) == <modified-entry> {
@@ -224,17 +205,13 @@
         [#outline.entry(
             it.level,
             it.element,
-            it.body,
-            [], // remove fill
-            it.page,
+            fill: "",
           ) <modified-entry>]
       } else {
         [#outline.entry(
             it.level,
             it.element,
-            it.body,
-            it.fill,
-            it.page,
+            fill: "",
           ) <modified-entry>]
       }
     }
@@ -248,6 +225,13 @@
 
   glossar.glossar(acronyms)
   pagebreak()
+
+  // Reset outline entries
+  show outline.entry: it => link(
+    it.element.location(),
+    it.indented(it.prefix(), it.inner()),
+  )
+  set outline.entry(fill: repeat[.])
 
   heading(outlined: false, numbering: none)[Abbildungsverzeichnis]
   outline(

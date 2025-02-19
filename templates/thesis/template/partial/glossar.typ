@@ -1,4 +1,4 @@
-#import "@preview/glossarium:0.5.1": (
+#import "@preview/glossarium:0.5.3": (
   register-glossary,
   print-glossary,
 )
@@ -92,7 +92,6 @@
     user-print-back-references: default-print-back-references,
   ) = {
     return [
-      #show figure.where(kind: __glossarium_figure): it => it.caption
       #par(
         hanging-indent: 1em,
         first-line-indent: 0em,

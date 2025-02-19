@@ -26,11 +26,18 @@ jobs:
       - name: Install Fonts
         run: fontist install "Fira Code" && fontist install "TeX" && sudo apt-get install -y fonts-texgyre
 
+      - name: Read version from typst.toml
+        uses: SebRollen/toml-action@v1.2.0
+        id: read_toml
+        with:
+          file: 'templates/${{ matrix.type }}/typst.toml'
+          field: 'package.version'
+
       - name: Create target directory
-        run: mkdir -p ~/.local/share/typst/packages/local/modern-whs-${{ matrix.type }}/0.1.0
+        run: mkdir -p ~/.local/share/typst/packages/local/modern-whs-${{ matrix.type }}/${{ steps.read_toml.outputs.value}}
 
       - name: Copy package to data directory
-        run: cp -r templates/${{ matrix.type }}/. ~/.local/share/typst/packages/local/modern-whs-${{ matrix.type }}/0.1.0/
+        run: cp -r templates/${{ matrix.type }}/. ~/.local/share/typst/packages/local/modern-whs-${{ matrix.type }}/${{ steps.read_toml.outputs.value}}/
 
       - name: Render Paper
         run: typst compile templates/${{ matrix.type }}/example/main.typ ${{ matrix.type }}.pdf --font-path ~/.fontist/fonts

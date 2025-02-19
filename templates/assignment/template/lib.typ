@@ -1,6 +1,5 @@
-#import "@preview/codly:1.0.0": *
-#import "@preview/outrageous:0.3.0"
-#import "@preview/codly-languages:0.1.5": *
+#import "@preview/codly:1.2.0": *
+#import "@preview/codly-languages:0.1.6": *
 
 #import "util.typ": *
 #import "partial/title.typ" as title-page
@@ -65,7 +64,36 @@
   counter(page).update(1)
 
   // Table of contents.
-  show outline.entry: outrageous.show-entry.with(font: ("TeX Gyre Heros", auto))
+  show outline.entry: it => link(
+    it.element.location(),
+    [#it.indented(it.prefix(), it.inner()) #v(12pt, weak: true)],
+  )
+  set outline.entry(fill: repeat[.])
+  show outline.entry.where(level: 1): it => {
+    v(18pt, weak: true)
+    if it.at("label", default: none) == <modified-entry> {
+      // prevent infinite recursion
+      if it.element.supplement.text == "Abschnitt" {
+        strong(it)
+      } else {
+        it
+      }
+    } else {
+      if it.element.supplement.text == "Abschnitt" {
+        [#outline.entry(
+            it.level,
+            it.element,
+            fill: "",
+          ) <modified-entry>]
+      } else {
+        [#outline.entry(
+            it.level,
+            it.element,
+            fill: "",
+          ) <modified-entry>]
+      }
+    }
+  }
 
   outline()
 
@@ -107,6 +135,12 @@
     #it.body
   ]
 
+  show outline.entry: it => link(
+    it.element.location(),
+    [#it.indented(it.prefix(), it.inner()) #v(15pt, weak: true)],
+  )
+  set outline.entry(fill: repeat[.])
+
   // --- Bibliography ---
   set par(leading: 0.7em, first-line-indent: 0em, justify: true)
   heading(outlined: false, numbering: none)[Literaturverzeichnis]
@@ -117,19 +151,19 @@
 
   // List of figures.
   outline(
-    title: "Abbildungsverzeichnis",
+    title: [Abbildungsverzeichnis #v(15pt, weak: true)],
     target: figure.where(kind: image),
   )
 
   // List of tables.
   outline(
-    title: "Tabellenverzeichnis",
+    title: [Tabellenverzeichnis #v(15pt, weak: true)],
     target: figure.where(kind: table),
   )
 
   // List of code.
   outline(
-    title: "Codeverzeichnis",
+    title: [Codeverzeichnis #v(15pt, weak: true)],
     target: figure.where(kind: "code"),
   )
 }

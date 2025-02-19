@@ -8,5 +8,5 @@
     key: "html",
     short: "HTML",
     long: "Hypertext Markup Language",
-  )
+  ),
 )
