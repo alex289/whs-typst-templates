@@ -34,9 +34,7 @@ jobs:
           field: 'package.version'
 
       - name: Replace preview with local names in example
-        run: |
-          file_path="path/to/your/file.txt"
-          sed -i "" -e 's/preview/local/g' "templates/${{ matrix.type }}/example/main.typ"
+        run: sed -i "" -e 's/preview/local/g' "templates/${{ matrix.type }}/example/main.typ"
 
       - name: Create target directory
         run: mkdir -p ~/.local/share/typst/packages/local/modern-whs-${{ matrix.type }}/${{ steps.read_toml.outputs.value}}
