@@ -6,7 +6,7 @@
 #import "partial/glossar.typ" as glossar
 
 #import "@preview/codly:1.2.0": *
-#import "@preview/codly-languages:0.1.6": *
+#import "@preview/codly-languages:0.1.7": *
 #import "@preview/glossarium:0.5.3": make-glossary
 
 #let whs-thesis(

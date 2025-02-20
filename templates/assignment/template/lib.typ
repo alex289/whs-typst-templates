@@ -1,5 +1,5 @@
 #import "@preview/codly:1.2.0": *
-#import "@preview/codly-languages:0.1.6": *
+#import "@preview/codly-languages:0.1.7": *
 
 #import "util.typ": *
 #import "partial/title.typ" as title-page
