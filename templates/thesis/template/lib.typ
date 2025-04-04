@@ -257,6 +257,8 @@
   set page(numbering: "1")
   counter(page).update(1)
 
+  set par(justify: true, spacing: 1.5em)
+
   set page(
     header: elems.common_header(title),
     footer: none,

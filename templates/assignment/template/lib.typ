@@ -117,7 +117,7 @@
   set page(numbering: "1", number-align: right)
   counter(page).update(1)
 
-  set par(justify: true)
+  set par(justify: true, spacing: 1.5em)
 
   body
 
