@@ -1,6 +1,7 @@
 #let affidavit(
   background,
-  degree,
+  lastName,
+  firstName,
   title,
   place,
   date,
@@ -12,7 +13,7 @@
   v(0.3cm)
   stack(
     spacing: 2mm,
-    [#meta.lastName, #meta.firstName],
+    [#lastName, #firstName],
     line(length: 100%, stroke: 0.5pt),
     [#text(8pt)[Name, Vorname /\/ Name, First Name]]
   )

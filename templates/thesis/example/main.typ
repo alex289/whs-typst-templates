@@ -6,6 +6,8 @@
 #show: whs-thesis.with(
   meta.title,
   meta.author,
+  meta.firstName,
+  meta.lastName,
   meta.date,
   meta.keywords,
   [#abstract],

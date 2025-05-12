@@ -12,6 +12,8 @@
 #let whs-thesis(
   title,
   author,
+  firstName,
+  lastName,
   date,
   keywords,
   font: settings.FONT_PRIMARY,
@@ -160,7 +162,8 @@
   )
   affidavit.affidavit(
     background,
-    degree,
+    lastName,
+    firstName,
     title,
     place,
     date,
