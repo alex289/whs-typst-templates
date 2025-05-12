@@ -24,9 +24,9 @@
 
   [Ich versichere hiermit an Eides statt, dass ich die vorliegende Abschlussarbeit mit dem Titel]
 
-  v(-14pt)
+  v(-10pt)
   text(titleSize, hyphenate: true)[*#title*]
-  v(-14pt)
+  v(-10pt)
 
   [selbstständig und ohne unzulässige fremde Hilfe erbracht habe. Ich habe keine anderen als die angegebenen Quellen und Hilfsmittel benutzt sowie wörtliche und sinngemäße Zitate kenntlich gemacht. Die Arbeit hat in gleicher oder ähnlicher Form noch keine Prüfungsbehörde vorgelegen.]
 
