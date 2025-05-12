@@ -1,6 +1,8 @@
 #let title = "Bachelorarbeit Title"
 #let thesis-type = "Bachelorarbeit"
 #let author = "Max Mustermann"
+#let firstName = "Max"
+#let lastName = "Mustermann"
 #let description = "Thema Beschreibung"
 #let date = datetime.today()
 #let date-of-submission = "14.07.2025"

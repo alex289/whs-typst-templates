@@ -12,9 +12,9 @@
   v(0.3cm)
   stack(
     spacing: 2mm,
-    [#degree],
+    [#meta.lastName, #meta.firstName],
     line(length: 100%, stroke: 0.5pt),
-    [#text(8pt)[Akademischer Abschlussgrad: Grad, Fachrichtung (Abkürzung) /\/ Degree]],
+    [#text(8pt)[Name, Vorname /\/ Name, First Name]]
   )
   v(0.3cm)
 
