@@ -10,6 +10,7 @@
   first-examiner,
   second-examiner,
   date-of-submission,
+  titleSize
 ) = {
   set page(margin: (left: 3.7cm, bottom: 3cm, top: 1cm), background: background)
 
@@ -21,7 +22,7 @@
   stack(
     spacing: 3mm,
     [#text(8pt)[Titel der Arbeit /\/ Title of Thesis]],
-    [#text(24pt)[*#title*]],
+    [#text(titleSize, hyphenate: true)[*#title*]],
     line(length: 100%, stroke: 0.5pt),
   )
 

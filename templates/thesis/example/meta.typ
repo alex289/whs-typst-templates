@@ -1,4 +1,5 @@
-#let title = "Bachelorarbeit Title"
+#let title = "Der Titel der zugehörigen Bachelorarbeit in der es um ein Thema geht"
+#let titleSize = 16pt
 #let thesis-type = "Bachelorarbeit"
 #let author = "Max Mustermann"
 #let firstName = "Max"

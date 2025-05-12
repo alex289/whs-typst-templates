@@ -11,6 +11,7 @@
 
 #let whs-thesis(
   title,
+  titleSize,
   author,
   firstName,
   lastName,
@@ -159,6 +160,7 @@
     first-examiner,
     second-examiner,
     date-of-submission,
+    titleSize,
   )
   affidavit.affidavit(
     background,
@@ -167,6 +169,7 @@
     title,
     place,
     date,
+    titleSize,
   )
   pagebreak()
   abstract

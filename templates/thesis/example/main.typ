@@ -5,6 +5,7 @@
 
 #show: whs-thesis.with(
   meta.title,
+  meta.titleSize,
   meta.author,
   meta.firstName,
   meta.lastName,
