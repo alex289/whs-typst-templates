@@ -91,6 +91,10 @@ info "Checked out and pulled main in $PACKAGES_REPO"
 
 # 4. Checkout a new branch
 branch_name="whs-${chosen_dir%-*/}" # Remove trailing slash
+if git show-ref --verify --quiet "refs/heads/$branch_name"; then
+  git branch -D "$branch_name" &>/dev/null || { error "Failed to delete existing branch $branch_name"; exit 1; }
+  info "Deleted existing branch: $branch_name"
+fi
 git checkout -b "$branch_name" &>/dev/null || { error "Failed to create branch $branch_name"; exit 1; }
 info "Created and checked out branch: $branch_name"
 
