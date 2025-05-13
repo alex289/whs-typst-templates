@@ -37,7 +37,7 @@
   set outline(indent: auto)
 
   // Set citation style
-  set cite(style: "iso-690-author-date")
+  set cite(style: "ieee")
 
   // Heading spacing
   show heading.where(level: 1): set block(above: 1.95em, below: 1em)
@@ -146,7 +146,7 @@
   heading(outlined: false, numbering: none)[Literaturverzeichnis]
   bibliography(
     title: none,
-    style: "partial/iso690-author-date-de.csl",
+    style: "ieee",
   )
 
   // List of figures.
