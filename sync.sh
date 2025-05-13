@@ -10,6 +10,10 @@ NC='\033[0m' # No Color
 TEMPLATES_REPO="$HOME/dev/whs-typst-templates"
 PACKAGES_REPO="$HOME/dev/typst-packages"
 
+# GitHub sync repos
+SOURCE_REPO="typst/typst-packages"
+TARGET_REPO="alex289/typst-packages"
+
 # Function to display colored messages
 info() {
   echo -e "${GREEN}INFO: ${1}${NC}"
@@ -85,6 +89,7 @@ info "Version: $version"
 
 # 3. Checkout main and pull in typst-packages
 pushd "$PACKAGES_REPO" || exit 1
+gh repo sync $TARGET_REPO --source $SOURCE_REPO
 git checkout main &>/dev/null || { error "Failed to checkout main"; exit 1; }
 git pull &>/dev/null || { error "Failed to pull main"; exit 1; }
 info "Checked out and pulled main in $PACKAGES_REPO"
