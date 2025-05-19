@@ -19,7 +19,7 @@
 
     if np == page {
       // return if so
-      return [#number #upper(n.body)]
+      return [#number #h(5pt) #upper(n.body)]
     }
   }
 
@@ -32,7 +32,7 @@
       ..counter(heading).at(nearest_prev.location()),
     )
   }
-  return [#number #upper(nearest_prev.body)]
+  return [#number #h(5pt) #upper(nearest_prev.body)]
 }
 
 // the common header that is used on all pages except the first ones
