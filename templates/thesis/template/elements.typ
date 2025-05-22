@@ -19,6 +19,11 @@
 
     if np == page {
       // return if so
+
+      if (number == none) {
+        return upper(n.body)
+      }
+
       return [#number #h(5pt) #upper(n.body)]
     }
   }
@@ -32,6 +37,11 @@
       ..counter(heading).at(nearest_prev.location()),
     )
   }
+
+  if (number == none) {
+      return upper(nearest_prev.body)
+  }
+
   return [#number #h(5pt) #upper(nearest_prev.body)]
 }
 
