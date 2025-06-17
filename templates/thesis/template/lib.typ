@@ -64,7 +64,6 @@
   set text(
     11pt,
     font: font,
-    hyphenate: false,
     lang: "de",
   )
   show raw: set text(font: raw-font)
