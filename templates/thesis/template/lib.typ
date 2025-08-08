@@ -7,7 +7,7 @@
 
 #import "@preview/codly:1.3.0": *
 #import "@preview/codly-languages:0.1.8": *
-#import "@preview/glossarium:0.5.6": make-glossary
+#import "@preview/glossarium:0.5.8": make-glossary
 
 #let whs-thesis(
   title,
@@ -21,6 +21,7 @@
   math-font: settings.FONT_MATH,
   raw-font: settings.FONT_ACCENT,
   abstract,
+  appendix,
   bibliography,
   acronyms,
   degree,
@@ -62,13 +63,13 @@
   // ------ text, paragraph and block ------
 
   set text(
-    11pt,
+    12pt,
     font: font,
     lang: "de",
   )
   show raw: set text(font: raw-font)
   show math.equation: set text(font: math-font)
-  set par(leading: 0.7em, justify: true)
+  set par(leading: 0.7em, justify: true, spacing: 1.5em)
   set block(below: 1.7em)
 
   // ----------- headings ----------
@@ -170,8 +171,10 @@
     date,
     title-size,
   )
-  pagebreak()
-  abstract
+  if (abstract) {
+    pagebreak()
+    abstract
+  }
   pagebreak()
 
   // set correct header margin
@@ -238,19 +241,19 @@
   )
   set outline.entry(fill: repeat[.])
 
-  heading(outlined: false, numbering: none)[Abbildungsverzeichnis]
+  [= Abbildungsverzeichnis]
   outline(
     title: none,
     target: figure.where(kind: image),
   )
 
-  heading(outlined: false, numbering: none)[Tabellenverzeichnis]
+  [= Tabellenverzeichnis]
   outline(
     title: none,
     target: figure.where(kind: table),
   )
 
-  heading(outlined: false, numbering: none)[Codeverzeichnis]
+  [= Quelltextverzeichnis]
   outline(
     title: none,
     target: figure.where(kind: "code"),
@@ -261,8 +264,6 @@
   // Set page numbering
   set page(numbering: "1")
   counter(page).update(1)
-
-  set par(justify: true, spacing: 1.5em)
 
   set page(
     header: elems.common_header(title),
@@ -300,11 +301,17 @@
       top: settings.HEADER_HEIGHT,
     ),
   )
+  set heading(numbering: none)
 
   // Literaturverzeichnis
-  heading(outlined: false, numbering: none)[Literaturverzeichnis]
+  [= Literaturverzeichnis]
   bibliography(
     title: none,
     style: "ieee",
   )
+
+  if (appendix) {
+    pagebreak()
+    [#appendix]
+  }
 }

@@ -28,7 +28,7 @@
   text(title-size, hyphenate: true)[*#title*]
   v(-10pt)
 
-  [selbstständig und ohne unzulässige fremde Hilfe erbracht habe. Ich habe keine anderen als die angegebenen Quellen und Hilfsmittel benutzt sowie wörtliche und sinngemäße Zitate kenntlich gemacht. Die Arbeit hat in gleicher oder ähnlicher Form noch keine Prüfungsbehörde vorgelegen.]
+  [selbstständig und ohne unzulässige fremde Hilfe erbracht habe. Ich habe keine anderen als die angegebenen Quellen und Hilfsmittel benutzt sowie wörtliche und sinngemäße Zitate kenntlich gemacht. Die Arbeit hat in gleicher oder ähnlicher Form noch keine Prüfungsbehörde vorgelegen. Die als "pdf" eingereichte elektronische Form ist inhaltlich identisch mit der gebundenen Ausfertigung.]
 
   v(0.7cm)
   stack(
