@@ -171,6 +171,7 @@
     place,
     date,
     title-size,
+    signature
   )
   if (abstract != none) {
     pagebreak()
