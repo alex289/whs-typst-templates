@@ -37,7 +37,12 @@
     [#place, am #date.display("[day].[month].[year]"),],
     line(length: 100%, stroke: 0.5pt),
     if (signature != none) {
-      [#signature]
+      place(
+        top + left,
+        dx: 300pt,
+        dy: -50pt,
+        signature
+      )
     },
     [#text(8pt)[Ort, Datum, Unterschrift /\/ Place, Date, Signature]],
   )
