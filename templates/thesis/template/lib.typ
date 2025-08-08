@@ -32,8 +32,8 @@
   first-examiner,
   second-examiner,
   date-of-submission,
-  background: image("partial/images/background.jpg"),
   signature,
+  background: image("partial/images/background.jpg"),
   body,
 ) = {
   // ========== global definitions ============
