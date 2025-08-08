@@ -17,7 +17,7 @@
   meta.bibliography,
   acronyms.acronyms,
   meta.degree,
-  meta.place,
+  meta.place-location,
   meta.thesis-type,
   meta.study-course,
   meta.department,

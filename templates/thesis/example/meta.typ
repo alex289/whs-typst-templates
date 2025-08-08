@@ -7,7 +7,7 @@
 #let description = "Thema Beschreibung"
 #let date = datetime.today()
 #let date-of-submission = "14.07.2025"
-#let place = "Bocholt"
+#let place-location = "Bocholt"
 #let keywords = ("Bachelorarbeit", "Westfälische Hochschule", "Informatik")
 #let degree = "Bachelor of Science (B.Sc.)"
 #let study-course = "Informatik.Softwaresysteme"

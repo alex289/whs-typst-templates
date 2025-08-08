@@ -3,7 +3,7 @@
   last-name,
   first-name,
   title,
-  place,
+  place-location,
   date,
   title-size,
   signature
@@ -34,7 +34,7 @@
   v(0.7cm)
   stack(
     spacing: 2mm,
-    [#place, am #date.display("[day].[month].[year]"),],
+    [#place-location, am #date.display("[day].[month].[year]"),],
     line(length: 100%, stroke: 0.5pt),
     if (signature != none) {
       [#place(
