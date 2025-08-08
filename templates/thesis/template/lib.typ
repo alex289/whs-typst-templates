@@ -171,7 +171,7 @@
     date,
     title-size,
   )
-  if (abstract) {
+  if (abstract != none) {
     pagebreak()
     abstract
   }
@@ -310,7 +310,7 @@
     style: "ieee",
   )
 
-  if (appendix) {
+  if (appendix != none) {
     pagebreak()
     [#appendix]
   }
