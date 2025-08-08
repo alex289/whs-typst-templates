@@ -311,7 +311,6 @@
   )
 
   if (appendix != none) {
-    pagebreak()
     [#appendix]
   }
 }
