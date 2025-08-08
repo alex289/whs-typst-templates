@@ -5,7 +5,8 @@
   title,
   place,
   date,
-  title-size
+  title-size,
+  signature
 ) = {
   set page(margin: (top: 10cm), background: background)
 
@@ -35,6 +36,9 @@
     spacing: 2mm,
     [#place, am #date.display("[day].[month].[year]"),],
     line(length: 100%, stroke: 0.5pt),
+    if (signature != none) {
+      [#signature]
+    },
     [#text(8pt)[Ort, Datum, Unterschrift /\/ Place, Date, Signature]],
   )
 }
