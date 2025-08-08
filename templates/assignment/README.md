@@ -35,3 +35,11 @@ The package can be configured where it is initialized. The configuration is done
   meta.bibliography,
 )
 ```
+
+## Customizing this template
+
+If the predefined design of this template doesnt fit your needs, you can customize it by following these steps:
+
+1. Download the repository of this template
+2. Copy the template folder `/templates/assignment/template` into your project.
+3. Replace the import of `@preview/modern-whs-assignment` with `template/lib.typ`

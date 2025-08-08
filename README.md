@@ -18,6 +18,14 @@ cd modern-whs-assignment
 ```
 Or create a project on the typst web app based on this template.
 
+## Customizing this template
+
+If the predefined design of this template doesnt fit your needs, you can customize it by following these steps:
+
+1. Download the repository of the templates
+2. Copy the template folder `/templates/{type}/template` into your project.
+3. Replace the import of `@preview/modern-whs-{type}` with `template/lib.typ`
+
 ## Contributing
 
 When contributing make sure to format all files with [typstyle](https://github.com/Enter-tainer/typstyle).
