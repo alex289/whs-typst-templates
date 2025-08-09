@@ -6,7 +6,7 @@
   place-location,
   date,
   title-size,
-  signature
+  signature,
 ) = {
   set page(margin: (top: 10cm), background: background)
 
@@ -17,7 +17,7 @@
     spacing: 2mm,
     [#last-name, #first-name],
     line(length: 100%, stroke: 0.5pt),
-    [#text(8pt)[Name, Vorname /\/ Name, First Name]]
+    [#text(8pt)[Name, Vorname /\/ Name, First Name]],
   )
   v(0.3cm)
 
@@ -38,11 +38,11 @@
     line(length: 100%, stroke: 0.5pt),
     if (signature != none) {
       [#place(
-        top + left,
-        dx: 300pt,
-        dy: -50pt,
-        signature
-      )]
+          top + left,
+          dx: 300pt,
+          dy: -50pt,
+          signature,
+        )]
     },
     [#text(8pt)[Ort, Datum, Unterschrift /\/ Place, Date, Signature]],
   )

@@ -39,7 +39,7 @@
   }
 
   if (number == none) {
-      return upper(nearest_prev.body)
+    return upper(nearest_prev.body)
   }
 
   return [#number #h(5pt) #upper(nearest_prev.body)]

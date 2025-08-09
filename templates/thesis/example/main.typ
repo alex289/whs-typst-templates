@@ -24,7 +24,7 @@
   meta.first-examiner,
   meta.second-examiner,
   meta.date-of-submission,
-  image("images/signature.png", height: 75pt)
+  image("images/signature.png", height: 75pt),
 )
 
 // ---------------- Main ------------------

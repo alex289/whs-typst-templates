@@ -10,7 +10,7 @@
   first-examiner,
   second-examiner,
   date-of-submission,
-  titleSize
+  titleSize,
 ) = {
   set page(margin: (left: 3.7cm, bottom: 3cm, top: 1cm), background: background)
 
