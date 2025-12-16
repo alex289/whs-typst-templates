@@ -8,7 +8,7 @@ description = "Thesis template for Westfälische Hochschule."
 repository = "https://github.com/alex289/whs-typst-templates"
 keywords = ["WHS", "Westfälische Hochschule", "Bachelorthesis", "Masterthesis", "Bachelorarbeit", "Masterarbeit", "thesis"]
 categories = ["thesis"]
-compiler = "0.14.0"
+compiler = "0.14.2"
 
 [template]
 path = "example"
