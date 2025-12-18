@@ -14,6 +14,7 @@
   lecturer,
   bibliography,
   acronyms,
+  glossar,
   body,
 ) = {
   // Global Settings
