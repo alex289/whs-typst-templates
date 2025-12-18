@@ -123,47 +123,60 @@
 
   // --- Appendixes ---
 
-  set page(header: [])
+  context {
+    if (counter(figure).final().at(0) > 0 or bibliography != none) {
+      set page(header: [])
 
-  // restart page numbering using roman numbers
-  set page(numbering: "I", number-align: right)
-  counter(page).update(1)
+      // restart page numbering using roman numbers
+      set page(numbering: "I", number-align: right)
+      counter(page).update(1)
 
-  [= Verzeichnisse]
+      [= Verzeichnisse]
 
-  show heading: it => [
-    #it.body
-  ]
+      show heading: it => [
+        #it.body
+      ]
 
-  show outline.entry: it => link(
-    it.element.location(),
-    [#it.indented(it.prefix(), it.inner()) #v(15pt, weak: true)],
-  )
-  set outline.entry(fill: repeat[.])
+      show outline.entry: it => link(
+        it.element.location(),
+        [#it.indented(it.prefix(), it.inner()) #v(15pt, weak: true)],
+      )
+      set outline.entry(fill: repeat[.])
 
-  // --- Bibliography ---
-  set par(leading: 0.7em, first-line-indent: 0em, justify: true)
-  heading(outlined: false, numbering: none)[Literaturverzeichnis]
-  bibliography(
-    title: none,
-    style: "ieee",
-  )
+      // --- Bibliography ---
+      set par(leading: 0.7em, first-line-indent: 0em, justify: true)
 
-  // List of figures.
-  outline(
-    title: [Abbildungsverzeichnis #v(15pt, weak: true)],
-    target: figure.where(kind: image),
-  )
+      if (bibliography != none) {
+        heading(outlined: false, numbering: none)[Literaturverzeichnis]
+        bibliography(
+          title: none,
+          style: "ieee",
+        )
+      }
 
-  // List of tables.
-  outline(
-    title: [Tabellenverzeichnis #v(15pt, weak: true)],
-    target: figure.where(kind: table),
-  )
+      // List of figures.
+      if counter(figure.where(kind: image)).final().at(0) > 0 {
+        outline(
+          title: [Abbildungsverzeichnis #v(15pt, weak: true)],
+          target: figure.where(kind: image),
+        )
+      }
 
-  // List of code.
-  outline(
-    title: [Codeverzeichnis #v(15pt, weak: true)],
-    target: figure.where(kind: "code"),
-  )
+      // List of tables.
+      if counter(figure.where(kind: table)).final().at(0) > 0 {
+        outline(
+          title: [Tabellenverzeichnis #v(15pt, weak: true)],
+          target: figure.where(kind: table),
+        )
+      }
+
+      // List of code.
+      if counter(figure.where(kind: "code")).final().at(0) > 0 {
+        outline(
+          title: [Codeverzeichnis #v(15pt, weak: true)],
+          target: figure.where(kind: "code"),
+        )
+      }
+    }
+  }
 }
