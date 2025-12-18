@@ -24,9 +24,9 @@
   meta.first-examiner,
   meta.second-examiner,
   meta.date-of-submission,
-  image("images/signature.png", height: 75pt),
   meta.language,
-  meta.citation-style
+  meta.citation-style,
+  image("images/signature.png", height: 75pt),
 )
 
 // ---------------- Main ------------------

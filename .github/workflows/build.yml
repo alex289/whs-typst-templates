@@ -13,10 +13,10 @@ jobs:
         type: [thesis, assignment]
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install Typst
-        uses: typst-community/setup-typst@v3
+        uses: typst-community/setup-typst@v4
         with:
           cache-dependency-path: templates/${{ matrix.type }}/template/lib.typ
 
@@ -46,7 +46,7 @@ jobs:
         run: typst compile templates/${{ matrix.type }}/example/main.typ ${{ matrix.type }}.pdf --font-path ~/.fontist/fonts
 
       - name: Upload Paper
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: ${{ matrix.type }}
           path: ${{ matrix.type }}.pdf

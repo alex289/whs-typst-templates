@@ -34,10 +34,10 @@
   first-examiner,
   second-examiner,
   date-of-submission,
+  language,
+  citation-style,
   signature,
   background: image("partial/images/background.jpg"),
-  language: "de",
-  citation-style: "ieee",
   body,
 ) = {
   // ========== global definitions ============
