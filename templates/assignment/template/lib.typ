@@ -4,6 +4,7 @@
 
 #import "util.typ": *
 #import "partial/title.typ" as title-page
+#import "partial/glossar.typ" as glossar
 
 #let whs-assignment(
   title,
@@ -14,7 +15,6 @@
   lecturer,
   bibliography,
   acronyms,
-  glossar,
   body,
 ) = {
   // Global Settings
