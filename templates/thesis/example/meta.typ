@@ -15,5 +15,5 @@
 #let first-examiner = "Prof. Dr. Max Mustermann"
 #let second-examiner = "Prof. Dr. Max Mustermann"
 #let bibliography = bibliography.with("bibliography.bib")
-#let language = "de"
-#let citation-style = "ieee"
+#let language = "de" // "de" or "en"
+#let citation-style = "ieee" // e.g. "ieee", "apa", "chicago"
