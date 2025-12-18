@@ -1,3 +1,5 @@
+#import "../languages.typ": getText
+
 #let affidavit(
   background,
   last-name,
@@ -7,29 +9,30 @@
   date,
   title-size,
   signature,
+  language: "de",
 ) = {
   set page(margin: (top: 10cm), background: background)
 
-  heading(outlined: false, numbering: none)[Eidesstattliche Versicherung]
+  heading(outlined: false, numbering: none)[#getText("affidavit", language)]
 
   v(0.3cm)
   stack(
     spacing: 2mm,
     [#last-name, #first-name],
     line(length: 100%, stroke: 0.5pt),
-    [#text(8pt)[Name, Vorname /\/ Name, First Name]],
+    [#text(8pt)[#getText("nameFirstName", language)]],
   )
   v(0.3cm)
 
   set text(11pt)
 
-  [Ich versichere hiermit an Eides statt, dass ich die vorliegende Abschlussarbeit mit dem Titel]
+  [#getText("affidavitText", language)]
 
   v(-10pt)
   text(title-size, hyphenate: true)[*#title*]
   v(-10pt)
 
-  [selbstständig und ohne unzulässige fremde Hilfe erbracht habe. Ich habe keine anderen als die angegebenen Quellen und Hilfsmittel benutzt sowie wörtliche und sinngemäße Zitate kenntlich gemacht. Die Arbeit hat in gleicher oder ähnlicher Form noch keine Prüfungsbehörde vorgelegen. Die als "pdf" eingereichte elektronische Form ist inhaltlich identisch mit der gebundenen Ausfertigung.]
+  [#getText("affidavitDeclaration", language)]
 
   v(0.7cm)
   stack(
@@ -44,6 +47,6 @@
           signature,
         )]
     },
-    [#text(8pt)[Ort, Datum, Unterschrift /\/ Place, Date, Signature]],
+    [#text(8pt)[#getText("placeDateSignature", language)]],
   )
 }

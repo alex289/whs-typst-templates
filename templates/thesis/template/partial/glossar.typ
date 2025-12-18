@@ -2,9 +2,10 @@
   register-glossary,
   print-glossary,
 )
+#import "../languages.typ": getText
 
-#let glossar(acronyms) = {
-  heading(outlined: false, numbering: none)[Abkürzungsverzeichnis]
+#let glossar(acronyms, language: "de") = {
+  heading(outlined: false, numbering: none)[#getText("abbreviations", language)]
 
 
   let default-print-title(entry) = {

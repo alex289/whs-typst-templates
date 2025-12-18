@@ -5,6 +5,8 @@
 #import "partial/title.typ" as title-page
 #import "partial/glossar.typ" as glossar
 
+#import "languages.typ": getText
+
 #import "@preview/codly:1.3.0": *
 #import "@preview/codly-languages:0.1.10": *
 #import "@preview/glossarium:0.5.9": make-glossary
@@ -34,6 +36,8 @@
   date-of-submission,
   signature,
   background: image("partial/images/background.jpg"),
+  language: "de",
+  citation-style: "ieee",
   body,
 ) = {
   // ========== global definitions ============
@@ -41,7 +45,7 @@
   set document(title: title, author: author, date: date, keywords: keywords)
 
 
-  set text(lang: "de")
+  set text(lang: language)
   set text(ligatures: false)
 
   set page("a4")
@@ -52,7 +56,7 @@
     ),
   )
 
-  set cite(style: "ieee")
+  set cite(style: citation-style)
 
   // ========== Plugins ============
 
@@ -83,7 +87,10 @@
   // numbering
   show heading: it => {
     let elems = ()
-    if (it.numbering != none and it.body != [Inhaltsverzeichnis]) {
+    if (
+      it.numbering != none
+        and it.body != [#getText("tableOfContents", language)]
+    ) {
       elems.push(counter(heading).display())
     }
     elems.push(it.body)
@@ -119,7 +126,7 @@
   // --------- outline and bibliography -------
 
   // add outlines to table of contents, except for itself
-  show outline.where(title: [Inhaltsverzeichnis]): it => {
+  show outline.where(title: [#getText("tableOfContents", language)]): it => {
     set heading(outlined: false)
     it
   }
@@ -162,6 +169,7 @@
     second-examiner,
     date-of-submission,
     title-size,
+    language: language,
   )
   affidavit.affidavit(
     background,
@@ -172,6 +180,7 @@
     date,
     title-size,
     signature,
+    language: language,
   )
   if (abstract != none) {
     pagebreak()
@@ -195,7 +204,10 @@
   )
 
   set par(leading: 1em)
-  heading(outlined: false, numbering: none)[Inhaltsverzeichnis]
+  heading(outlined: false, numbering: none)[#getText(
+      "tableOfContents",
+      language,
+    )]
   show outline.entry: it => link(
     it.element.location(),
     [#it.indented(it.prefix(), it.inner()) #v(12pt, weak: true)],
@@ -205,13 +217,13 @@
     v(18pt, weak: true)
     if it.at("label", default: none) == <modified-entry> {
       // prevent infinite recursion
-      if it.element.supplement.text == "Abschnitt" {
+      if it.element.supplement.text == getText("section", language) {
         strong(it)
       } else {
         it
       }
     } else {
-      if it.element.supplement.text == "Abschnitt" {
+      if it.element.supplement.text == getText("section", language) {
         [#outline.entry(
             it.level,
             it.element,
@@ -233,7 +245,7 @@
   set par(leading: 0.65em) // Reset par leading
   pagebreak()
 
-  glossar.glossar(acronyms)
+  glossar.glossar(acronyms, language: language)
   pagebreak()
 
   // Reset outline entries
@@ -243,19 +255,19 @@
   )
   set outline.entry(fill: repeat[.])
 
-  [= Abbildungsverzeichnis]
+  [= #getText("listOfFigures", language)]
   outline(
     title: none,
     target: figure.where(kind: image),
   )
 
-  [= Tabellenverzeichnis]
+  [= #getText("listOfTables", language)]
   outline(
     title: none,
     target: figure.where(kind: table),
   )
 
-  [= Quelltextverzeichnis]
+  [= #getText("listOfCode", language)]
   outline(
     title: none,
     target: figure.where(kind: "code"),
@@ -306,10 +318,10 @@
   set heading(numbering: none)
 
   // Literaturverzeichnis
-  [= Literaturverzeichnis]
+  [= #getText("bibliography", language)]
   bibliography(
     title: none,
-    style: "ieee",
+    style: citation-style,
   )
 
   if (appendix != none) {
