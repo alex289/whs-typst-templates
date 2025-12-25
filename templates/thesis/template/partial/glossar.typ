@@ -5,7 +5,10 @@
 #import "../languages.typ": get-text
 
 #let glossar(acronyms, language: "de") = {
-  heading(outlined: false, numbering: none)[#get-text("abbreviations", language)]
+  heading(outlined: false, numbering: none)[#get-text(
+      "abbreviations",
+      language,
+    )]
 
 
   let default-print-title(entry) = {
