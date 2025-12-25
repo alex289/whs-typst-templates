@@ -5,7 +5,7 @@
 #import "partial/title.typ" as title-page
 #import "partial/glossar.typ" as glossar
 
-#import "languages.typ": getText
+#import "languages.typ": get-text
 
 #import "@preview/codly:1.3.0": *
 #import "@preview/codly-languages:0.1.10": *
@@ -89,7 +89,7 @@
     let elems = ()
     if (
       it.numbering != none
-        and it.body != [#getText("tableOfContents", language)]
+        and it.body != [#get-text("table-of-contents", language)]
     ) {
       elems.push(counter(heading).display())
     }
@@ -126,7 +126,7 @@
   // --------- outline and bibliography -------
 
   // add outlines to table of contents, except for itself
-  show outline.where(title: [#getText("tableOfContents", language)]): it => {
+  show outline.where(title: [#get-text("table-of-contents", language)]): it => {
     set heading(outlined: false)
     it
   }
@@ -204,8 +204,8 @@
   )
 
   set par(leading: 1em)
-  heading(outlined: false, numbering: none)[#getText(
-      "tableOfContents",
+  heading(outlined: false, numbering: none)[#get-text(
+      "table-of-contents",
       language,
     )]
   show outline.entry: it => link(
@@ -217,13 +217,13 @@
     v(18pt, weak: true)
     if it.at("label", default: none) == <modified-entry> {
       // prevent infinite recursion
-      if it.element.supplement.text == getText("section", language) {
+      if it.element.supplement.text == get-text("section", language) {
         strong(it)
       } else {
         it
       }
     } else {
-      if it.element.supplement.text == getText("section", language) {
+      if it.element.supplement.text == get-text("section", language) {
         [#outline.entry(
             it.level,
             it.element,
@@ -255,19 +255,19 @@
   )
   set outline.entry(fill: repeat[.])
 
-  [= #getText("listOfFigures", language)]
+  [= #get-text("list-of-figures", language)]
   outline(
     title: none,
     target: figure.where(kind: image),
   )
 
-  [= #getText("listOfTables", language)]
+  [= #get-text("list-of-tables", language)]
   outline(
     title: none,
     target: figure.where(kind: table),
   )
 
-  [= #getText("listOfCode", language)]
+  [= #get-text("list-of-code", language)]
   outline(
     title: none,
     target: figure.where(kind: "code"),
@@ -318,7 +318,7 @@
   set heading(numbering: none)
 
   // Literaturverzeichnis
-  [= #getText("bibliography", language)]
+  [= #get-text("bibliography", language)]
   bibliography(
     title: none,
     style: citation-style,
