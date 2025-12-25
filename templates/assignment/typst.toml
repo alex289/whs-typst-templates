@@ -1,6 +1,6 @@
 [package]
 name = "modern-whs-assignment"
-version = "0.2.1"
+version = "0.3.0"
 entrypoint = "template/lib.typ"
 authors = ["Alexander Konietzko <https://github.com/alex289>"]
 license = "MIT"
