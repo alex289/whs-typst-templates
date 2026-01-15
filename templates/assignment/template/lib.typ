@@ -134,7 +134,7 @@
   // --- Appendixes ---
 
   context {
-    if (counter(figure).final().at(0) > 0 or bibliography != none) {
+    if (query(figure).filter(x => x.kind != "glossarium_entry").len() > 0 or bibliography != none) {
       set page(header: [])
 
       // restart page numbering using roman numbers
