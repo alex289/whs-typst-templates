@@ -4,6 +4,7 @@
 
 #show: whs-assignment.with(
   meta.title,
+  meta.subtitle,
   meta.author,
   meta.submission-date,
   meta.keywords,

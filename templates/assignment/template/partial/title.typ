@@ -1,4 +1,4 @@
-#let title(title, author, submission-date, course, lecturer) = {
+#let title(title, subtitle, author, submission-date, course, lecturer) = {
   set align(center)
 
   v(30pt)
@@ -6,6 +6,11 @@
 
   v(70pt)
   text(size: 26pt, weight: 700)[#title]
+
+  if (subtitle != none and subtitle.len() > 0) {
+    v(0pt)
+    text(size: 17pt, weight: 700)[#subtitle]
+  }
 
   v(20pt)
   text(size: 12pt, weight: 500)[

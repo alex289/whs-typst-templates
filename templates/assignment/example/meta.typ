@@ -1,4 +1,5 @@
 #let title = "Titel"
+#let subtitle = ""
 #let author = "Max Mustermann"
 #let course = "Algorithmen und Datenstrukturen"
 #let lecturer = "Prof. Dr.-Ing. Max Mustermann"

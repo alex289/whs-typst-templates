@@ -8,6 +8,7 @@
 
 #let whs-assignment(
   title,
+  subtitle,
   author,
   submission-date,
   keywords,
@@ -57,6 +58,7 @@
 
   title-page.title(
     title,
+    subtitle,
     author,
     submission-date,
     course,
@@ -134,7 +136,10 @@
   // --- Appendixes ---
 
   context {
-    if (query(figure).filter(x => x.kind != "glossarium_entry").len() > 0 or bibliography != none) {
+    if (
+      query(figure).filter(x => x.kind != "glossarium_entry").len() > 0
+        or bibliography != none
+    ) {
       set page(header: [])
 
       // restart page numbering using roman numbers
