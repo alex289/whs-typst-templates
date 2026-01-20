@@ -108,6 +108,7 @@ target_dir="packages/preview/modern-whs-${chosen_dir%-*/}/$version"
 rm -rf "$target_dir" # Remove the directory if it exists
 mkdir -p "$target_dir"
 cp -r "$chosen_path/"* "$target_dir/" || { error "Failed to copy files"; exit 1; }
+cp "$TEMPLATES_REPO/LICENSE" "$target_dir/" || { error "Failed to copy LICENSE"; exit 1; }
 info "Copied files to $target_dir"
 
 # 6. Commit the changes
