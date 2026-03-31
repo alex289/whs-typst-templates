@@ -13,10 +13,10 @@ jobs:
         type: [thesis, assignment]
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Install Typst
-        uses: typst-community/setup-typst@v4
+        uses: typst-community/setup-typst@v5
         with:
           cache-dependency-path: templates/${{ matrix.type }}/template/lib.typ
 
@@ -27,11 +27,10 @@ jobs:
         run: fontist install "Fira Code" && fontist install "TeX" && sudo apt-get install -y fonts-texgyre
 
       - name: Read version from typst.toml
-        uses: SebRollen/toml-action@v1.2.0
         id: read_toml
-        with:
-          file: 'templates/${{ matrix.type }}/typst.toml'
-          field: 'package.version'
+        run: |
+          VERSION=$(grep '^version' templates/${{ matrix.type }}/typst.toml | sed 's/version = "\(.*\)"/\1/')
+          echo "value=$VERSION" >> "$GITHUB_OUTPUT"
 
       - name: Replace preview with local names in example
         run: sed -i -e 's/preview/local/g' "${{ github.workspace }}/templates/${{ matrix.type }}/example/main.typ"
@@ -46,7 +45,7 @@ jobs:
         run: typst compile templates/${{ matrix.type }}/example/main.typ ${{ matrix.type }}.pdf --font-path ~/.fontist/fonts
 
       - name: Upload Paper
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.type }}
           path: ${{ matrix.type }}.pdf
