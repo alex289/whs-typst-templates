@@ -37,7 +37,7 @@
   language,
   citation-style,
   signature,
-  background: image("partial/images/background.jpg"),
+  background: "default",
   body,
 ) = {
   // ========== global definitions ============
@@ -155,6 +155,16 @@
   // =============== Content ==============
 
   // -------- Predefined pages -------
+
+  let background = if type(background) == str {
+    if background == "gray" {
+      image("partial/images/background-gray.jpg")
+    } else {
+      image("partial/images/background.jpg")
+    }
+  } else {
+    background
+  }
 
   title-page.title(
     background,

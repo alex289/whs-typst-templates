@@ -27,6 +27,7 @@
   meta.language,
   meta.citation-style,
   image("images/signature.png", height: 75pt),
+  // background: "default", "gray", or a custom image()
 )
 
 // ---------------- Main ------------------
