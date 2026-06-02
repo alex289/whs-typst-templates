@@ -18,6 +18,7 @@
   acronyms.acronyms,
   meta.degree,
   meta.place-location,
+  meta.place-birth,
   meta.thesis-type,
   meta.study-course,
   meta.department,
