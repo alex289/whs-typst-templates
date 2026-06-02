@@ -8,6 +8,7 @@
 #let date = datetime.today()
 #let date-of-submission = "14.07.2025"
 #let place-location = "Bocholt"
+#let place-birth = "Bocholt"
 #let keywords = ("Bachelorarbeit", "Westfälische Hochschule", "Informatik")
 #let degree = "Bachelor of Science (B.Sc.)"
 #let study-course = "Informatik.Softwaresysteme"
