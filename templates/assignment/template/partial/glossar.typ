@@ -136,8 +136,13 @@
               .filter(x => x.group == group) {
               (
                 text.with(weight: 600)(emph(entry.short)) + h(20pt),
-                entry.long,
-                entry.description,
+                entry.long
+                  + if entry.description != none and entry.description != "" {
+                    ": " + entry.description
+                  } else {
+                    ""
+                  },
+                [],
                 default-print-reference(entry),
               )
             },
