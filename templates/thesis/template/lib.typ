@@ -11,33 +11,36 @@
 #import "@preview/glossarium:0.5.10": make-glossary
 
 #let whs-thesis(
-  title,
-  title-size,
-  author,
-  first-name,
-  last-name,
-  date,
-  keywords,
+  // metadata
+  title: "",
+  title-size: 16pt,
+  thesis-type: "Bachelorarbeit",
+  author: "",
+  first-name: "",
+  last-name: "",
+  date: datetime.today(),
+  date-of-submission: "",
+  place-location: "",
+  place-birth: "",
+  keywords: (),
+  degree: "",
+  study-course: "",
+  department: "",
+  first-examiner: "",
+  second-examiner: "",
+  signature: none,
+  // content
+  abstract: none,
+  appendix: none,
+  bibliography: none,
+  acronyms: none,
+  // settings
+  language: "de",
+  citation-style: "ieee",
+  background: "default",
   font: "TeX Gyre Heros",
   math-font: "New Computer Modern Math",
   raw-font: "Fira Code",
-  abstract,
-  appendix,
-  bibliography,
-  acronyms,
-  degree,
-  place-location,
-  place-birth,
-  thesis-type,
-  study-course,
-  department,
-  first-examiner,
-  second-examiner,
-  date-of-submission,
-  language,
-  citation-style,
-  signature,
-  background: "default",
   body,
 ) = {
   // ========== global definitions ============
@@ -45,7 +48,6 @@
   set document(title: title, author: author, date: date, keywords: keywords)
 
 
-  set text(lang: language)
   set text(ligatures: false)
 
   set page("a4")
@@ -70,7 +72,7 @@
   set text(
     12pt,
     font: font,
-    lang: "de",
+    lang: language,
   )
   show raw: set text(font: raw-font)
   show math.equation: set text(font: math-font)
@@ -255,8 +257,10 @@
   set par(leading: 0.65em) // Reset par leading
   pagebreak()
 
-  glossar.glossar(acronyms, language: language)
-  pagebreak()
+  if (acronyms != none) {
+    glossar.glossar(acronyms, language: language)
+    pagebreak()
+  }
 
   // Reset outline entries
   show outline.entry: it => link(
@@ -328,11 +332,13 @@
   set heading(numbering: none)
 
   // Literaturverzeichnis
-  [= #get-text("bibliography", language)]
-  bibliography(
-    title: none,
-    style: citation-style,
-  )
+  if (bibliography != none) {
+    [= #get-text("bibliography", language)]
+    bibliography(
+      title: none,
+      style: citation-style,
+    )
+  }
 
   if (appendix != none) {
     [#appendix]

@@ -22,28 +22,37 @@ Or create a project on the typst web app based on this template.
 
 ## Configuration
 
-The package can be configured where it is initialized. The configuration is done in the `meta.typ` file.
+The package can be configured where it is initialized. All parameters are named and optional, so you only need to pass the ones you want to change. The example project keeps its values in the `meta.typ` file.
 
 ```typst
 #show: whs-thesis.with(
-   meta.title,
-   meta.title-size,
-   meta.author,
-   meta.first-name,
-   meta.last-name,
-   meta.date,
-   meta.keywords,
-   [#abstract],
-   meta.bibliography,
-   acronyms.acronyms,
-   meta.degree,
-   meta.place,
-   meta.thesis-type,
-   meta.study-course,
-   meta.department,
-   meta.first-examiner,
-   meta.second-examiner,
-   meta.date-of-submission,
+  title: meta.title,
+  title-size: meta.title-size,
+  thesis-type: meta.thesis-type,
+  author: meta.author,
+  first-name: meta.first-name,
+  last-name: meta.last-name,
+  date: meta.date,
+  date-of-submission: meta.date-of-submission,
+  place-location: meta.place-location,
+  place-birth: meta.place-birth,
+  keywords: meta.keywords,
+  degree: meta.degree,
+  study-course: meta.study-course,
+  department: meta.department,
+  first-examiner: meta.first-examiner,
+  second-examiner: meta.second-examiner,
+  signature: image("images/signature.png", height: 75pt), // none to disable
+  abstract: [#abstract], // none to disable
+  appendix: [#appendix], // none to disable
+  bibliography: meta.bibliography, // none to disable
+  acronyms: acronyms.acronyms, // none to disable
+  language: meta.language, // "de" or "en"
+  citation-style: meta.citation-style, // e.g. "ieee", "apa", "chicago"
+  background: "default", // "default", "gray", or a custom image()
+  font: "TeX Gyre Heros",
+  math-font: "New Computer Modern Math",
+  raw-font: "Fira Code",
 )
 ```
 

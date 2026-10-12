@@ -5,29 +5,29 @@
 #import "acronyms.typ" as acronyms
 
 #show: whs-thesis.with(
-  meta.title,
-  meta.title-size,
-  meta.author,
-  meta.first-name,
-  meta.last-name,
-  meta.date,
-  meta.keywords,
-  [#abstract],
-  [#appendix],
-  meta.bibliography,
-  acronyms.acronyms,
-  meta.degree,
-  meta.place-location,
-  meta.place-birth,
-  meta.thesis-type,
-  meta.study-course,
-  meta.department,
-  meta.first-examiner,
-  meta.second-examiner,
-  meta.date-of-submission,
-  meta.language,
-  meta.citation-style,
-  image("images/signature.png", height: 75pt),
+  title: meta.title,
+  title-size: meta.title-size,
+  thesis-type: meta.thesis-type,
+  author: meta.author,
+  first-name: meta.first-name,
+  last-name: meta.last-name,
+  date: meta.date,
+  date-of-submission: meta.date-of-submission,
+  place-location: meta.place-location,
+  place-birth: meta.place-birth,
+  keywords: meta.keywords,
+  degree: meta.degree,
+  study-course: meta.study-course,
+  department: meta.department,
+  first-examiner: meta.first-examiner,
+  second-examiner: meta.second-examiner,
+  signature: image("images/signature.png", height: 75pt), // none to disable
+  abstract: [#abstract], // none to disable
+  appendix: [#appendix], // none to disable
+  bibliography: meta.bibliography, // none to disable
+  acronyms: acronyms.acronyms, // none to disable
+  language: meta.language,
+  citation-style: meta.citation-style,
   // background: "default", "gray", or a custom image()
   // font: "TeX Gyre Heros",
   // math-font: "New Computer Modern Math",

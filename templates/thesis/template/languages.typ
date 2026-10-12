@@ -19,6 +19,7 @@
   affidavit-text: "Ich versichere hiermit an Eides statt, dass ich die vorliegende Abschlussarbeit mit dem Titel",
   affidavit-declaration: "selbstständig und ohne unzulässige fremde Hilfe erbracht habe. Ich habe keine anderen als die angegebenen Quellen und Hilfsmittel benutzt sowie wörtliche und sinngemäße Zitate kenntlich gemacht. Die Arbeit hat in gleicher oder ähnlicher Form noch keine Prüfungsbehörde vorgelegen. Die als \"pdf\" eingereichte elektronische Form ist inhaltlich identisch mit der gebundenen Ausfertigung.",
   place-date-signature: "Ort, Datum, Unterschrift // Place, Date, Signature",
+  date-prefix: "am ",
 )
 
 #let en = (
@@ -42,6 +43,7 @@
   affidavit-text: "I hereby declare under oath that I have completed the present thesis with the title",
   affidavit-declaration: "independently and without unauthorized external help. I have not used any sources or aids other than those indicated and have marked both literal and analogous quotations. The work has not been submitted to any examination authority in the same or similar form. The electronic version submitted as \"pdf\" is identical in content to the bound version.",
   place-date-signature: "Place, Date, Signature",
+  date-prefix: "",
 )
 
 #let get-text(key, lang) = {
