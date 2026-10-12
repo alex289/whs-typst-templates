@@ -1,5 +1,3 @@
-#import "settings.typ" as settings
-
 // finds the first level one header on this or some previous page
 #let heading_near_to_here = context {
   let here = here()
@@ -53,7 +51,7 @@
     counter(page).display()
   }
 
-  v(settings.HEADER_INNER_MARGIN)
+  v(1.3cm)
   set text(10pt)
   set align(top)
   block(

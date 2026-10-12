@@ -29,6 +29,9 @@
   meta.citation-style,
   image("images/signature.png", height: 75pt),
   // background: "default", "gray", or a custom image()
+  // font: "TeX Gyre Heros",
+  // math-font: "New Computer Modern Math",
+  // raw-font: "Fira Code",
 )
 
 // ---------------- Main ------------------

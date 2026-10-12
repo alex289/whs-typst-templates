@@ -1,5 +1,4 @@
 #import "elements.typ" as elems
-#import "settings.typ" as settings
 
 #import "partial/affidavit.typ" as affidavit
 #import "partial/title.typ" as title-page
@@ -19,9 +18,9 @@
   last-name,
   date,
   keywords,
-  font: settings.FONT_PRIMARY,
-  math-font: settings.FONT_MATH,
-  raw-font: settings.FONT_ACCENT,
+  font: "TeX Gyre Heros",
+  math-font: "New Computer Modern Math",
+  raw-font: "Fira Code",
   abstract,
   appendix,
   bibliography,
@@ -202,7 +201,7 @@
   // set correct header margin
   set page(
     margin: (
-      top: settings.HEADER_HEIGHT,
+      top: 3cm,
     ),
   )
   // set common header and footer
@@ -294,7 +293,7 @@
     header: elems.common_header(title),
     footer: none,
     margin: (
-      top: settings.HEADER_HEIGHT,
+      top: 3cm,
     ),
   )
 
@@ -323,7 +322,7 @@
     header: elems.common_header(title),
     footer: none,
     margin: (
-      top: settings.HEADER_HEIGHT,
+      top: 3cm,
     ),
   )
   set heading(numbering: none)
