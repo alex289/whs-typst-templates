@@ -6,8 +6,8 @@
 
 #import "languages.typ": get-text
 
-#import "@preview/codly:1.3.0": *
-#import "@preview/codly-languages:0.1.10": *
+#import "@preview/codly:2.0.0" as codly
+#import "@preview/codly-languages:0.1.10": codly-languages
 #import "@preview/glossarium:0.5.10": make-glossary
 
 #let whs-thesis(
@@ -64,8 +64,9 @@
 
   show: make-glossary
 
-  show: codly-init.with()
-  codly(zebra-fill: none, languages: codly-languages, display-icon: false)
+  show: codly.lang-set_(languages: codly-languages, display-icon: false)
+  show: codly.line-set_(fill: none)
+  show raw.where(block: true): codly.new
 
   // ------ text, paragraph and block ------
 

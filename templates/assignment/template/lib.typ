@@ -1,5 +1,5 @@
-#import "@preview/codly:1.3.0": *
-#import "@preview/codly-languages:0.1.10": *
+#import "@preview/codly:2.0.0" as codly
+#import "@preview/codly-languages:0.1.10": codly-languages
 #import "@preview/glossarium:0.5.10": make-glossary
 
 #import "util.typ": *
@@ -49,8 +49,9 @@
   show heading.where(level: 3): set block(above: 1.75em, below: 1em)
   show heading.where(level: 4): set block(above: 1.55em, below: 1em)
 
-  show: codly-init.with()
-  codly(languages: codly-languages, zebra-fill: none)
+  show: codly.lang-set_(languages: codly-languages)
+  show: codly.line-set_(fill: none)
+  show raw.where(block: true): codly.new
 
   show: make-glossary
 
