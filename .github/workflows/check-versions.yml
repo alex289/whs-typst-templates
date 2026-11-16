@@ -1,0 +1,19 @@
+name: Check template versions
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  check-versions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Check script syntax
+        run: bash -n sync.sh && bash -n scripts/check-versions.sh
+
+      - name: Check example versions
+        run: bash scripts/check-versions.sh
+
+      - name: Test sync workflow
+        run: python3 -m unittest discover -s tests -v

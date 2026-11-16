@@ -34,3 +34,27 @@ When contributing make sure to format all files with [typstyle](https://github.c
 # In the root directory of the repository
 typstyle format-all templates
 ```
+
+## Syncing a release
+
+To prepare a new release, commit your template changes, then run:
+
+```bash
+./sync.sh
+```
+
+Select the template when prompted, or run `./sync.sh thesis` to select it directly.
+Every sync automatically increases the patch version (for example, `0.6.0` to
+`0.6.1`), updates `typst.toml` and the example import together, and commits those
+two files in this repository before copying and committing the release in the
+packages repository. It chooses a version above both the local version and the
+latest version on the packages repository's refreshed `main` branch, preserving
+existing releases. The source commit stays local; push this repository separately
+when ready.
+
+CI checks that every example imports its manifest's version on pushes and pull
+requests. To run that check locally without syncing, use `bash scripts/check-versions.sh`.
+
+Sync requires Git, the GitHub CLI (`gh`), and clean working trees in both repositories.
+The packages checkout defaults to `~/dev/typst-packages`; set `PACKAGES_REPO` to use
+another path. The script asks before pushing the packages branch.

@@ -1,3 +1,4 @@
 fonts
 .DS_Store
 main.pdf
+__pycache__/
